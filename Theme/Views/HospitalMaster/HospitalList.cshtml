@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Theme.Models.Hospital>
+
+@{
+    ViewBag.Title = "HospitalList";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>HospitalList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+    <table class="table-responsive-lg">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HospitalName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HospitalAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HospitalCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HospitalState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HospitalCountry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HospitalPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HospitalEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HospitalLogo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntryDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntryBy)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HospitalName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HospitalAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HospitalCity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HospitalState)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HospitalCountry)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HospitalPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HospitalEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HospitalLogo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EntryDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EntryBy)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.HospitalId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.HospitalId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.HospitalId })
+                </td>
+            </tr>
+        }
+
+    </table>
+

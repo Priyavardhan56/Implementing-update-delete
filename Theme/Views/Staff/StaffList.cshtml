@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "StaffList";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<center><h3>StaffList</h3> </center>
+<br />
+<div class="container-fluid">
+    <div class="row mt-1">
+        <div class="col-lg-11">
+            <form>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table border">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Employee Code</th>
+                                        <th>Hospital Id</th>
+                                        <th>Staff Specilization</th>
+                                        <th>Staff Qualification</th>
+                                        <th>Staff Phone</th>
+                                        <th>Role ID</th>
+                                        <th>Staff Email</th>
+                                        <th>Role Address</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Country</th>
+                                        <th>Entry By</th>
+                                        <th>Designation</th>
+                                        <th>ENtry Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < ViewBag.Data.Count; i++)
+                                    {
+                                        <tr>
+                                            @for (int j = 0; j < ViewBag.Data[0].Count; j++)
+                                            {
+                                                <td>@ViewBag.Data[i][j]</td>
+                                            }
+                                        </tr>
+                                    }
+                                  
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+

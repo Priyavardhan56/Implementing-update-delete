@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "PatientSettings";
+    Layout = "~/Views/Shared/PatientLayout.cshtml";
+}
+<h3 class="mt-4">
+    Change Profile Settings
+</h3>
+<div class="row mt-4">
+    <div class="col-lg-12">
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="Hospital Name"><b> User Name:</b></label>
+                        <input type="text"
+                               placeholder="Enter User Name"
+                               class="form-control"
+                               name="User Name"
+                               required />
+                        <label for="psw"><b>Old Password:</b></label>
+                        <input type="password"
+                               placeholder="Enter Password"
+                               class="form-control"
+                               name="Address"
+                               required />
+                        <label for="psw"><b>New Password:</b></label>
+                        <input type="password"
+                               placeholder="Enter Password"
+                               class="form-control"
+                               name="Address"
+                               required />
+
+                        <div class="form-group mt-2">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                Change
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

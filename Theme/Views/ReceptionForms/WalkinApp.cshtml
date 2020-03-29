@@ -1,0 +1,137 @@
+﻿@model Theme.Models.Appointment
+
+@{
+    ViewBag.Title = "WalkinApp";
+    Layout = "~/Views/Shared/AppointmentLayout.cshtml";
+}
+
+
+    <div class="shadow p-3 mb-0 bg-white rounded">
+        <div class="row">
+            <div class="col-md-7">
+                <h4 class="shadow-none p-3 mb-0 bg-light rounded" style="margin:40px 0px 0px 0%; font-family:'Times New Roman'">
+                    Generate New Appointment
+                </h4><br>
+                     <div class="shadow p-3 mb-5 bg-white rounded" style="margin:0px 0px 0px 0%">
+                         <form method="post" action="DataPush">
+                             <div class="form-group mt-4" style="margin:0px 0px 0px 29%">
+                                 <div class="form-check form-check-inline">
+                                     <input class="form-check-input" type="radio" name="AppointmentType" id="product_active" value="Telephonic" checked>
+                                     <label class="form-check-label" for="product_active">
+                                         Telephonic
+                                     </label>
+                                 </div>
+                                 <div class="form-check form-check-inline">
+                                     <input class="form-check-input" type="radio" name="AppointmentType" id="product_inactive" value="Walkin">
+                                     <label class="form-check-label" for="product_inactive">
+                                         Walkin
+                                     </label>
+                                 </div>
+                             </div><br>
+                             <div class="row" style="margin:0px 0px 0px 4px">
+                                 <div class="col-sm-5">
+
+                                     <div class="form-input">
+                                         <label>Name</label>
+                                         <input id="Name" name="Name" class="form-control" type="text">
+                                     </div>
+                                 </div>
+                                 <div class="col-sm-1"></div>
+                                 <div class="col-sm-5">
+                                     <div class="form-input">
+                                         <label>Address</label>
+                                         <textarea class="form-control" id="Address" name="Address" type="text"></textarea>
+                                     </div>
+                                 </div>
+                             </div>
+
+                             <div class="row mt-3" style="margin:0px 0px 0px 4px">
+                                 <div class="col-sm-5">
+                                     <div class="form-input">
+                                         <label>Phone</label>
+                                         <input class="form-control" id="Phone" name="Phone" type="text">
+                                     </div>
+                                 </div>
+                                 <div class="col-sm-1"></div>
+                                 <div class="col-sm-5">
+                                     <div class="form-input">
+                                         <label>Problem</label>
+                                         <textarea class="form-control" id="Problem" name="Problem" type="text"></textarea>
+                                     </div>
+                                 </div>
+                             </div>
+
+                             <div class="row mt-3" style="margin:0px 0px 0px 4px">
+                                 <div class="col-sm-5">
+                                     <div class="form-input">
+                                         <label>Payment</label>
+                                         <input class="form-control" id="Payment" name="Payment" type="text">
+                                     </div>
+                                 </div>
+                                 <div class="col-sm-1"></div>
+                                 <div class="col-sm-5">
+                                     <div class="form-input">
+                                         <label id="Label">Time</label>
+                                         <div class="time-icon">
+                                             <input type="time" class="form-control" name="Time" id="time">
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div><br />
+                             <div class="m-t-20 text-center" style="margin:0px 0px 0px -10%">
+                                 <input type="submit" class="btn btn-primary" id="btnSubmit" value="Save">
+                             </div>
+
+                             <br>
+                         </form>
+                         <div class="m-t-20 text-center" style="margin:0px 0px 0px -10%">
+                             <button type="submit" class="btn btn-primary" id="btnSubmit" value="Cancel">Cancel</button>
+                         </div>
+                     </div>
+            </div>
+            <br>
+            <div class="col-md-5">
+
+                <h4 class="shadow-none p-3 mb-0 bg-light rounded" style="margin:40px 0px 0px 0%; font-family:'Times New Roman'">
+                    StatusList
+                </h4><br>
+                <div class="container-fluid">
+                    <div class="col-md-12">
+                        <form>
+                            <div class="shadow p-3 mb-0 bg-white rounded" style="margin:0px 0px 0px 0%">
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <table class="table border">
+                                            <thead class="bg-primary text-white">
+                                                <tr>
+                                                    <th>TokenNo</th>
+                                                    <th>Name</th>
+                                                    <th>Status</th>
+                                                    <th>AppointmentType</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                @for (int i1 = 0; i1 < ViewBag.Data.Count; i1++)
+                                                {
+                                                    <tr>
+                                                        @for (int j = 0; j < ViewBag.Data[0].Count; j++)
+                                                        {
+                                                            <td>@ViewBag.Data[i1][j]</td>
+                                                        }
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+  

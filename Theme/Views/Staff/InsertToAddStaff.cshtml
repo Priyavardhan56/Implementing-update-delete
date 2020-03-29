@@ -1,0 +1,281 @@
+﻿
+@{
+    ViewBag.Title = "InsertToAddStaff";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+    <script>
+    $(document).ready(function () {
+
+        $("#HospitalId").hide();
+        $("#EntryBy").hide();
+        $("#eb").hide();
+        $("#hi").hide();
+
+
+    });
+    </script>
+<h3 class="mt-4">
+    Enter  Staff Details
+</h3>
+<br>
+
+<div class="container">
+    <form method="post" action="InsertData">
+        <div class="row">
+
+            <div class="col-sm-3">
+
+                <div class="form-input">
+                    <label>Staff Name</label>
+                    <input class="form-control" id="staffName" name="StaffName" type="text">
+                </div>
+            </div>
+
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label id="hi">Hospital Id</label>
+                    <input class="form-control" id="hospitalId" name="HospitalId" type="number">
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>Employee Code</label>
+                    <input class="form-control" id="employeeCode" name="EmployeeCode" type="number">
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row mt-3">
+            <div class="col-sm-3">
+
+                <div class="form-input">
+                    <label>Staff Specialization</label>
+                    <input class="form-control" id="staffSpecilization" name="StaffSpecialization" type="text">
+                </div>
+            </div>
+
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>Staff Degree</label>
+                    <input class="form-control" id="StaffDegree" name="StaffDegree" type="text">
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>Designation</label>
+                    <input class="form-control" id="designation" name="designation" type="text">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>Staff Phone</label>
+                    <input class="form-control" id="staffPhone" name="StaffPhone" type="tel">
+                </div>
+
+
+            </div>
+
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+
+                <div class="form-input">
+                    <label>Staff E-mail</label>
+                    <input class="form-control" id="StaffEmail" name="StaffEmail" type="text">
+                </div>
+
+
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>City</label>
+                    <input class="form-control" id="city" name="StaffCity" type="text">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-3">
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>State</label>
+                    <input class="form-control" id="state" name="StaffState" type="text">
+                </div>
+
+            </div>
+
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>Country</label>
+                    <input class="form-control" id="country" name="StaffCountry" type="text">
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label class="display-block">Employee Status</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Status" id="product_active" value="option1" checked>
+                        <label class="form-check-label" for="product_active">
+                            Active
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Status" id="product_inactive" value="option2">
+                        <label class="form-check-label" for="product_inactive">
+                            Inactive
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-3">
+                @*<div class="form-input">
+            <label>Entry DateTime</label>
+            <input class="form-control" id="EntryDate" name="EntryDate" type="date">
+        </div>*@
+                <div class="form-input">
+                    <label>Staff Address</label>
+                    <textarea class="form-control" id="StaffAddress" name="StaffAddress" type="text"></textarea>
+                </div>
+
+            </div>
+
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label id="eb">Entry By</label>
+                    @*<div class="form-control">
+            @{
+                if (Session["Email"] != null)
+                {
+                    @Session["Name"].ToString()
+                }
+
+            }
+        </div>*@
+                    @Html.TextBox("EntryBy", (string)ViewBag.EntryBy, new { @class = "form-control" })
+                </div>
+
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>Role Id</label>
+                    <input class="form-control" id="roleId" name="RoleId" type="number">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-3">
+
+               
+
+
+            </div>
+
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+             
+
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                
+            </div>
+        </div>
+
+        <br>
+
+       
+
+
+        <div class="m-t-20 text-center" style="margin:0px 0px 0px -10%">
+            <input type="submit" class="btn btn-primary" id="btnSubmit" value="Save">
+        </div>
+        <br>
+    </form>
+</div>
+
+
+
+<div class="container-fluid">
+    <h3 class="mt-4">
+        Staff List
+    </h3><br>
+    <div class="row mt-1">
+    
+                <div class="container-fluid">
+                    <form>
+                        <div class="col-md-12">
+
+                            <div class="shadow p-3 mb-0 bg-white rounded" style="margin:0px 0px 0px 0%">
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <table class="table border">
+                                            <thead class="bg-primary text-white">
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Name</th>
+
+                                                    <th>Hospital Id</th>
+                                                    <th>Employee Code</th>
+                                                    <th>Staff Specilization</th>
+                                                    <th>Staff Qualification</th>
+                                                    <th>Designation</th>
+                                                    <th>Staff Phone</th>
+
+                                                    <th>Staff Email</th>
+
+                                                    <th>City</th>
+                                                    <th>State</th>
+                                                    <th>Country</th>
+                                                    <th>Status</th>
+                                                    <th>Entry Date</th>
+                                                    <th>Entry By</th>
+                                                    <th>Role ID</th>
+                                                    <th>Address</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                @for (int i1 = 0; i1 < ViewBag.Data.Count; i1++)
+                                                {
+                                                    <tr>
+                                                        @for (int j = 0; j < ViewBag.Data[0].Count; j++)
+                                                        {
+                                                            <td>@ViewBag.Data[i1][j]</td>
+                                                        }
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+         
+        </div>
+    </div>
+
+
+

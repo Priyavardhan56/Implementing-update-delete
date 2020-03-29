@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Hospital Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/css/simple-sidebar.css" rel="stylesheet" />
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous" />
+
+    <link href="~/Content/Assests/hia/jquery-ui/themes/base/jquery-ui.css" type="text/css" rel="stylesheet">
+
+    <link href="~/Content/Assests/hia/dist/css/tokenfield-typeahead.css" type="text/css" rel="stylesheet">
+
+    <link href="~/Content/Assests/hia/dist/css/bootstrap-tokenfield.css" type="text/css" rel="stylesheet">
+
+    <link href="~/Content/Assests/hia/docs-assets/css/pygments-manni.css" type="text/css" rel="stylesheet">
+    <link href="~/Content/Assests/hia/docs-assets/css/docs.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-custom text-white border-right  " id="sidebar-wrapper">
+            <div class="sidebar-heading">
+                <i class="fa fa-user-md" aria-hidden="true"></i>&nbsp;E-Care
+            </div>
+            <div class="list-group list-group-flush  ">
+                @*<a href="./HospitalDashboard.html"
+                    class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-dashboard"></i> Hospital Dashboard</a>*@
+                @Html.ActionLink("Hospital Dashboard", "HospitalDashboard", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+                @*<a href="../HospitalPanel/hospitalSpecialization.html"
+                    class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-history" aria-hidden="true"></i>Add Specialization</a>*@
+                @*<a href="~/Views/Home/Index1.cshtml"
+                    class="list-group-item list-group-item-action bg-transparent"> Add Doctor</a>*@
+                @Html.ActionLink("Add Doctor", "Hospital/Create", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+                @Html.ActionLink("Doctor Profiles", "DoctorProfiles", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+                @Html.ActionLink("Add Staff", "InsertToStaff", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+
+                @Html.ActionLink("Settings", "Settings", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+
+                @*<a href="/HospitalPanel/DoctorProfiles.html"
+                       class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-user-md" aria-hidden="true"></i> Doctor Profiles</a>
+                    <a href="../HospitalPanel/settings.html"
+                       class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-cogs" aria-hidden="true"></i> Settings </a>
+                    <a href="/HospitalPanel/feedback.html"
+                       class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-commenting-o" aria-hidden="true"></i> feedback </a>*@
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light bg-custom border-bottom">
+                <button class="btn btn-light btn-sm" id="menu-toggle">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Welcome HS Ludhiana!</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               id="navbarDropdown"
+                               role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right"
+                                 aria-labelledby="navbarDropdown">
+                                @Html.ActionLink("My Profile", "HospitalProfile", null, new { @class = "dropdown-item" })
+                                @Html.ActionLink("LogOut", "index", null, new { @class = "dropdown-item" })
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container-fluid">
+
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/css/jsval/bootstrapValidation.js"></script>
+    <script type="text/javascript" src="~/Content/Assests/hia/jquery-ui/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="~/Content/Assests/hia/jquery-ui/ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/Content/Assests/hia/dist/bootstrap-tokenfield.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="~/Content/Assests/hia/docs-assets/js/scrollspy.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="~/Content/Assests/hia/docs-assets/js/affix.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="~/Content/Assests/hia/docs-assets/js/typeahead.bundle.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="~/Content/Assests/hia/docs-assets/js/docs.min.js" charset="UTF-8"></script>
+
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });</script>
+    <script>
+        $(document).ready(function () {
+            $('#tokenfield').tokenfield(
+                {
+                    autocomplete: {
+                        source: ['Cardio', 'Physio', 'Dentist', 'Gynocologist'],
+                        delay: 100
+                    },
+                    showAutocompleteOnFocus: true
+                }
+            );
+
+
+
+            $("form").submit(function (e) {
+                e.preventDefault();
+                $('.form-data').text($('#tokenfield').val());
+                $('.form-data').append(', ' + $('#tokenfield2').val());
+            });
+        });
+    </script>
+</body>
+</html>

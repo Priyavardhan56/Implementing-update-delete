@@ -1,0 +1,270 @@
+﻿
+@model List<Theme.Models.DoctorClass>
+@{
+    ViewBag.Title = "InsertToDoctor";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    var grid = new WebGrid(source: Model, canPage: true, rowsPerPage: 5);
+    grid.Pager(WebGridPagerModes.All);
+
+    if (Session["Email"] != null)
+    {
+        ViewBag.id = @Session["Id"].ToString();
+        ViewBag.EntryBy = @Session["Name"].ToString();
+    }
+
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+@*<script>
+    $(document).ready(function () {
+
+        $("#HospitalId").hide();
+        $("#EntryBy").hide();
+        $("#eb").hide();
+        $("#hi").hide();
+
+
+    });
+</script>*@
+
+
+<style type="text/css">
+    /*Here we will add css for style webgrid*/
+    .webgrid-table {
+        font-family: sans-serif;
+        font-size: 1.5em;
+        width: 100%;
+        display: table;
+        border-collapse: separate;
+        border: rgb(11, 102, 124);
+        background-color: white;
+    }
+
+        .webgrid-table td, th {
+            border: rgb(11, 102, 124);
+            padding: 3px 7px 2px;
+        }
+
+    .webgrid-header {
+        background-color: rgb(11, 102, 124);
+        color: #FFFFFF;
+        padding-bottom: 4px;
+        padding-top: 5px;
+        text-align: left;
+    }
+
+    .webgrid-footer {
+        color: black;
+    }
+
+    .webgrid-row-style {
+        padding: 3px 7px 2px;
+    }
+
+    .webgrid-alternating-row {
+        background-color: white;
+        padding: 3px 7px 2px;
+    }
+</style>
+
+
+<div class="container">
+    @using (Html.BeginForm("InsertData", "Doctor", FormMethod.Post))
+    {
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>EmployyeCode</label>
+                    <input class="form-control" id="EmployeeCode" name="EmployeeCode" type="text">
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>DoctorName</label>
+                    <input class="form-control" id="DoctorName" name="DoctorName" type="text">
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>Hospital Id</label>
+                    <input class="form-control" id="HospitalId" name="HospitalId" type="number">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>Doctor Specialization</label>
+                    <input class="form-control" id="DoctorSpecialization" name="DoctorSpecialization" type="text">
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>DoctorDegree</label>
+                    <input class="form-control" id="DoctorDegree" name="DoctorDegree" type="text">
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>DoctorPhone</label>
+                    <input class="form-control" id="DoctorPhone" name="DoctorPhone" type="number">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>DoctorEmail</label>
+                    <input class="form-control" id="DoctorEmail" name="DoctorEmail" type="text">
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>DoctorCity</label>
+                    <input class="form-control" id="DoctorCity" name="DoctorCity" type="text">
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>DoctorState</label>
+                    <input class="form-control" id="DoctorState" name="DoctorState" type="text">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>DoctorCountry</label>
+                    <input class="form-control" id="DoctorCountry" name="DoctorCountry" type="text">
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>DoctorAddress</label>
+                    <input class="form-control" id="DoctorAddress" name="DoctorAddress" type="text">
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label>RoleId</label>
+                    <input class="form-control" id="RoleId" name="RoleId" type="text">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-3">
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label id="eb">Entry By</label>
+                    @*<div class="form-control">
+                    @{
+                        if (Session["Email"] != null)
+                        {
+                            @Session["Name"].ToString()
+                        }
+
+                    }
+                </div>*@
+                    @Html.TextBox("EntryBy", (string)ViewBag.EntryBy, new { @class = "form-control" })
+                </div>
+
+            </div>
+
+           
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+                <div class="form-input">
+                    <label class="display-block">IsActive</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="IsActive" id="product_active" value="1" checked>
+                        <label class="form-check-label" for="product_active">
+                            Active
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="IsActive" id="product_inactive" value="0">
+                        <label class="form-check-label" for="product_inactive">
+                            Inactive
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="m-t-20 text-center" style="margin: 0px 0px 0px -10% ">
+            <input type="submit" class="btn btn-primary" id="btnSubmit" value="Save">
+        </div>
+        <br>
+    }
+</div>
+
+
+
+<div class="container-fluid">
+    <h4 class="mt-4">
+        User List
+    </h4><br>
+    <p>
+        @using (Html.BeginForm("InsertToDoctor", "Doctor", FormMethod.Get))
+        {
+            <input type="text" name="Usersearch" />
+            <input type="submit" value="Search" name="submit" />
+        }
+    </p>
+    <div class="table border">
+        <div class=" table-responsive">
+            @grid.GetHtml(
+
+                                 tableStyle: "webgrid-table",
+                                 headerStyle: "webgrid-header",
+                                 footerStyle: "webgrid-footer",
+                                 alternatingRowStyle: "webgrid-alternating-row",
+                                 rowStyle: "webgrid-row-style",
+                                  mode: WebGridPagerModes.All,
+        firstText: "<<First",
+        previousText: "<Previous",
+        nextText: "Next >",
+        lastText: "Last >>",
+                                 columns: new[]{
+                                   grid.Column("EmployeeCode"),
+                                    grid.Column("DoctorName"),
+                                     
+                                    grid.Column("HospitalId"),
+                                     grid.Column("DoctorSpecialization"),
+                                      grid.Column("DoctorDegree"),
+                                       grid.Column("DoctorPhone"),
+                                        grid.Column("DoctorEmail"),
+                                         grid.Column("DoctorCity"),
+
+                                          grid.Column("DoctorState"),
+                                          grid.Column("DoctorCountry"),
+                                   
+                                    grid.Column("IsActive"),
+                                     grid.Column("EntryBy"),
+                                    grid.Column("EntryDate"),
+
+                                 })
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

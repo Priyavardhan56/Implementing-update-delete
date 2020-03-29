@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Admin Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/css/simple-sidebar.css" rel="stylesheet" />
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous" />
+
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-custom text-white border-right  " id="sidebar-wrapper">
+            <div class="sidebar-heading">
+                <i class="fa fa-user-md" aria-hidden="true"></i>&nbsp;E-Care
+            </div>
+            <div class="list-group list-group-flush  ">
+                @*<a href="#"
+        class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-dashboard"></i> Admin Dashboard</a>*@
+                @Html.ActionLink("Admin Dashboard", "AdminDashboard", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+                @Html.ActionLink("Add Hospitals", "AddHospital", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+                @Html.ActionLink("Add Roles", "AddRoles", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+                @Html.ActionLink("Add Users", "Users", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+                @Html.ActionLink("Messages", "Messages", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+                @Html.ActionLink("Settings", "Settings", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+
+                @*<a href="../AdminPanel/ADDHospitals.html"
+        class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-user-md" aria-hidden="true"></i> Add Hospitals</a>*@
+                @*<a href="../AdminPanel/Users.html"
+           class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-user-md" aria-hidden="true"></i> Add Users</a>
+servi
+        <a href="Messages.html"
+           class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-comments-o" aria-hidden="true"></i> Messages </a>*@
+                <!-- <a
+      href="#"
+      class="list-group-item list-group-item-action bg-transparent"
+      ><i class="fa fa-address-card" aria-hidden="true"></i> Requests </a
+    > -->
+                @*<a href="../AdminPanel/settings.html"
+           class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-cogs" aria-hidden="true"></i> Settings </a>
+        <a href="./feedback.html"
+           class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-commenting-o" aria-hidden="true"></i> feedback </a>*@
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light bg-custom border-bottom">
+                <button class="btn btn-light btn-sm" id="menu-toggle">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Welcome HS Ludhiana!</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               id="navbarDropdown"
+                               role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right"
+                                 aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="Hospitalprofile.html"><i class="fa fa-cog" aria-hidden="true"></i> My Profile</a>
+                                <a class="dropdown-item" href="../index.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid">
+                @RenderBody()
+             </div>
+            </div>
+        </div>
+    
+                <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+                <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+                <!-- Menu Toggle Script -->
+                <script>
+                    $("#menu-toggle").click(function (e) {
+                        e.preventDefault();
+                        $("#wrapper").toggleClass("toggled");
+                    });</script>
+
+</body>
+</html>

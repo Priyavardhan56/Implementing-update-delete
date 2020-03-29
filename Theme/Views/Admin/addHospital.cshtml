@@ -1,0 +1,240 @@
+﻿
+@{
+    ViewBag.Title = "AddHospital";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+
+<h3 class="mt-4">
+    Add Hospitals
+</h3>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+
+            @*<div class="form-input">
+            <label>Hospital Id</label>
+            <input class="form-control" id="hospitalId" type="text">
+        </div>*@
+            <div class="form-input">
+                <label>Hospital Name</label>
+                <input class="form-control" id="HospitalName" type="text">
+            </div>
+        </div>
+
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-input">
+                <label>Entry By</label>
+                <input class="form-control" id="address" type="text">
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-group mt-4" style="margin:0px 0px 0px 20px">
+                <label class="display-block">Hospital Status</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="status" id="product_active" value="option1" checked>
+                    <label class="form-check-label" for="product_active">
+                        Active
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="status" id="product_inactive" value="option2">
+                    <label class="form-check-label" for="product_inactive">
+                        Inactive
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-3">
+        <div class="col-sm-3">
+      
+                <div class="form-input">
+                    <label>Email</label>
+                    <input class="form-control" id="email" type="text">
+                </div>
+        </div>
+
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-input">
+                <label>Phone</label>
+                <input class="form-control" id="phone" type="tel">
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-input">
+                <label>City</label>
+                <input class="form-control" id="city" type="text">
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-sm-3">
+       
+                <div class="form-input">
+                    <label>State</label>
+                    <input class="form-control" id="state" type="text">
+                </div>
+        </div>
+
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-input">
+                <label>Country</label>
+                <input class="form-control" id="country" type="text">
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-input">
+                <label>Address</label>
+                <textarea class="form-control" id="entryBy" type="text"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-sm-3">
+            <form action="/action_page.php">
+                <label for="img">Select image:</label>
+                <input type="file" id="img" name="img" accept="image/*">
+
+            </form>
+        </div>
+               
+        </div>
+
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            @*<div class="form-input">
+            <label>Entry Date</label>
+            <input class="form-control" id="entryDate&time" type="date">
+        </div>*@
+            <div class="form-input">
+                <label>Entry Time</label>
+                <input class="form-control" id="entryTime" type="time">
+            </div>
+
+
+        </div>
+
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm-4">
+        
+    </div>
+</div>
+
+<div class="form-group mt-2" style="margin-left: 40%;">
+    <button type="submit" class="btn btn-primary">
+        Add
+    </button>
+    <button type="submit" class="btn btn-danger ">
+        Cancel
+    </button>
+</div>
+<br>
+
+
+<div class="container-fluid">
+    <h3 class="mt-4">
+        Hospitals List
+    </h3><br>
+    <div class="row mt-1">
+        <div class="col-lg-12">
+            <form>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table border">
+                                    <thead class="bg-primary text-white">
+                                        <tr>
+                                            
+                                            <th>Hospital Name</th>
+                                            <th>HospitalAddress</th>
+                                            <th>Hospital City</th>
+                                            <th>Hospital State</th>
+                                            <th>Hospital Country</th>
+                                            <th>Hospital Phone</th>
+                                            <th>Hospital Email</th>
+                                            <th>Hospital Logo</th>
+                                            <th>Entry Date</th>
+                                            <th>Entry Time</th>
+                                            <th>Entry By</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                       
+                                            <td>Sarojini</td>
+                                            <td>Punjab,India</td>
+                                            <td>Jalndhar</td>
+                                            <td>Punjab</td>
+                                            <td>India</td>
+                                            <td>7889166534</td>
+                                            <td>sarojini@gmail.com</td>
+                                            <td>Yes</td>
+                                            <td>10 Feb 2020</td>
+                                            <td>10.00am-11.00am</td>
+                                            <td>Priyavardhan</td>
+
+
+                                            <td>
+
+
+                                                <i class="fa fa-eye"
+                                                   aria-hidden="true"
+                                                   style="color:dodgerblue"></i>&nbsp;
+                                                <i class="fa fa-trash"
+                                                   aria-hidden="true"
+                                                   style="color:red"></i>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                         
+                                            <td>Sarojini</td>
+                                            <td>Punjab,India</td>
+                                            <td>Jalndhar</td>
+                                            <td>Punjab</td>
+                                            <td>India</td>
+                                            <td>7889166534</td>
+                                            <td>sarojini@gmail.com</td>
+                                            <td>Yes</td>
+                                            <td>10 Feb 2020</td>
+                                            <td>10.00am-11.00am</td>
+                                            <td>Priyavardhan</td>
+
+                                            <td>
+
+                                                <i class="fa fa-eye"
+                                                   aria-hidden="true"
+                                                   style="color:dodgerblue"></i>&nbsp;
+                                                <i class="fa fa-trash"
+                                                   aria-hidden="true"
+                                                   style="color:red"></i>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

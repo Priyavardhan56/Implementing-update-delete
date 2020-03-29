@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Theme.Models.Role>
+
+@{
+    ViewBag.Title = "RoleList";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>RoleList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryDateTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EntryBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EntryDateTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RoleId }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.RoleId }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id=item.RoleId })
+        </td>
+    </tr>
+}
+
+</table>

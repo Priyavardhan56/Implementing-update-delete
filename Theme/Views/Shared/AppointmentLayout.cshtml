@@ -1,0 +1,127 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title> Doctor Dashboard Appointments </title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Custom styles for this template -->
+
+
+
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/css/simple-sidebar.css" rel="stylesheet" />
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous" />
+    
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-custom text-white border-right  " id="sidebar-wrapper">
+            <div class="sidebar-heading">
+                <i class="fa fa-user-md" aria-hidden="true"></i>&nbsp;E-Care
+            </div>
+            <div class="list-group list-group-flush  ">
+                @*<a href="/ReceptionistPanel/Dashboard.html"
+                   class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-dashboard"></i> Dashboard</a>*@
+                @*<a href="/ReceptionistPanel/DoctorDashboardAppointment.html"
+           class="list-group-item list-group-item-action bg-transparent ">
+            <i class="fa fa-tasks" aria-hidden="true"></i> Make Patients Appointments
+        </a>*@
+                @Html.ActionLink("Dashboard", "ReceptionDashboard", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+
+                @Html.ActionLink("Make Appointments ", "WalkinApp", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+                @*<a href="AppointmentsList .html"
+        class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-cogs" aria-hidden="true"></i> Appointments List</a>*@
+                @Html.ActionLink("Appointment List", "AppointmentList", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+                @Html.ActionLink("Settings", "settings", null, new { @class = "list-group-item list-group-item-action bg-transparent" })
+
+                @*<a href="/ReceptionistPanel/settings.html"
+                   class="list-group-item list-group-item-action bg-transparent"><i class="fa fa-cogs" aria-hidden="true"></i> Settings </a>*@
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light bg-custom border-bottom">
+                <button class="btn btn-light btn-sm" id="menu-toggle">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Welcome User!</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                               href="#"
+                               id="navbarDropdown"
+                               role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right"
+                                 aria-labelledby="navbarDropdown">
+                                @Html.ActionLink("My Profile", "ReceptionProfile", null, new { @class = "dropdown-item" })
+                                @Html.ActionLink("LogOut", "index", null, new { @class = "dropdown-item" })
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <!-- /#page-content-wrapper -->
+    <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Content/assets/js/bootstrapValidation.js"></script>
+    
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+
+</body>
+</html>
+

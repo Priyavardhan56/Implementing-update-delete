@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="container-fluid">
+    <h3 class="mt-4">
+        Users
+    </h3>
+    <div class="row mt-4">
+        <div class="col-lg-12">
+            <form>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <!-- <label for="Hospital Name"><b> Hospital Name:</b></label>
+                            <input
+                              type="text"
+                              placeholder="Enter Hospital Name"
+                              class="form-control"
+                              name="Hospital Name"
+                              required
+                            />
+                            <label for="email"><b>Hospital Licence:</b></label><br>
+
+                                <input type="text" placeholder="Enter Hospital Licence "class="form-control" name="Licence" required><br>  -->
+                            <label for="Spec"><b>Type Of User:</b></label>
+                            <select name="Spec"
+                                    id="Spec"
+                                    class="form-control"
+                                    required>
+                                <option value="">None</option>
+                                <option>Hospital Users</option>
+                                <option>End Users</option>
+                                <!-- <option>Cardio</option> -->
+                            </select>
+
+                            <!-- <label for="email"><b>Email:</b></label>
+                            <input
+                              type="text"
+                              placeholder="Enter Email "
+                              class="form-control"
+                              name="email"
+                              required
+                            /> -->
+                            <!-- <label for="phone"><b>Phone Number:</b></label>
+                            <input
+                              type="tel"
+                              max-length="10"
+                              placeholder="Enter phone number"
+                              class="form-control"
+                              name="phone"
+                              required
+                            />
+
+                            <label for="psw"><b>Address:</b></label>
+                            <input
+                              type="password"
+                              placeholder="Enter Address"
+                              class="form-control"
+                              name="Address"
+                              required
+                            /> -->
+
+                            <div class="form-group mt-9">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    Select
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mt-2">
+                            <table class="table border">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Name</th>
+
+                                        <th>DoctorLicence</th>
+                                        <th>Specilization</th>
+                                        <th>Experience</th>
+                                        <th>EmailId</th>
+                                        <th>ContatctNo</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row">01</td>
+                                        <td>varun</td>
+                                        <td>gt567843fh</td>
+                                        <td>Cardio</td>
+                                        <td>10years</td>
+                                        <td>varun@gmail.com</td>
+                                        <td>78451221221</td>
+                                        <td>
+                                            <i class="fa fa-eye"
+                                               aria-hidden="true"
+                                               style="color:dodgerblue"></i>&nbsp;
+                                            <i class="fa fa-trash"
+                                               aria-hidden="true"
+                                               style="color:red"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="row">02</td>
+
+                                        <td>jatun</td>
+                                        <td>gtfdh67h</td>
+                                        <td>surgen</td>
+                                        <td>1years</td>
+                                        <td>jatun@gmail.com</td>
+                                        <td>985451221221</td>
+                                        <td>
+                                            <i class="fa fa-eye"
+                                               aria-hidden="true"
+                                               style="color:dodgerblue"></i>&nbsp;
+                                            <i class="fa fa-trash"
+                                               aria-hidden="true"
+                                               style="color:red"></i>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

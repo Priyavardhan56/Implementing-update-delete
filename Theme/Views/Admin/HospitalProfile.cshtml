@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "HospitalProfile";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+<div class="container-fluid">
+    <h3 class="mt-4">
+        <!-- <img
+          src="../Images/nurse.jpg"
+          width="70"
+          class="rounded-sm"
+          id="hospitalImg"
+        /> -->
+        My profile
+    </h3>
+    <div class="row mt-4">
+        <div class="col-lg-12">
+            <form>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label for="Hospital Name"><b> Name:</b></label>
+                            <input type="text"
+                                   placeholder="Enter Hospital Name"
+                                   class="form-control"
+                                   name="Hospital Name"
+                                   required />
+
+                            <!-- <label for="email"><b>Hospital Licence:</b></label><br>
+                                <input type="text" placeholder="Enter Hospital Licence "class="form-control" name="Licence" required><br> -->
+
+                            <label for="email"><b>Email:</b></label>
+                            <input type="text"
+                                   placeholder="Enter Email "
+                                   class="form-control"
+                                   name="email"
+                                   required />
+                            <label for="email"><b>License Number</b></label>
+                            <input type="text"
+                                   placeholder="Enter Email "
+                                   class="form-control"
+                                   name="email"
+                                   required />
+
+                            <label for="phone"><b>Phone Number:</b></label>
+                            <input type="tel"
+                                   max-length="10"
+                                   placeholder="Enter phone number"
+                                   class="form-control"
+                                   name="phone"
+                                   required />
+
+                            <label for="psw"><b>Address:</b></label>
+                            <textarea name=""
+                                      id=""
+                                      class="form-control"
+                                      placeholder="Your address"></textarea>
+
+                            <label for="Hospital Name"><b> Logo</b></label>
+                            <input type="file"
+                                   class="form-control-file"
+                                   name="fileUpload"
+                                   required />
+                            <div class="form-group mt-2">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    Update
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

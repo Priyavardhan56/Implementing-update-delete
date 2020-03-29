@@ -1,0 +1,285 @@
+﻿
+@{
+    ViewBag.Title = "DoctorCheckup";
+    Layout = "~/Views/Shared/DoctorLayout.cshtml";
+}
+
+
+<div class="container-fluid" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+    <br>
+    <center><h2>Doctor Checkup</h2></center>
+    <div class="input-group mb-3" style="margin-left:16px">
+        <input type="text" placeholder="ENTER TOKEN.NO">
+        <div class="input-group-append">
+            <button class="btn " type="submit" style="background-color:rgb(11, 102, 124);color:azure">Go</button>
+        </div>
+
+        <!----<button class="btn " type="submit" style="margin-left:16px; background-color:rgb(11, 102, 124); color:white">GenerateToken</button>
+        </div>---->
+
+        <div class="col-lg-12">
+            <div class="tab" style="background-color: rgb(11, 102, 124);">
+                <button style="margin: 3px;color: cornsilk;" class="tablinks" onclick="openCity(event, 'personalDetails')" id="defaultOpen">Patient Details</button>
+                <button style="margin: 3px;color: cornsilk;" class="tablinks" onclick="openCity(event, 'personalDetails')">Patient History</button>
+                <button style="margin: 3px;color: cornsilk;" class="tablinks" onclick="openCity(event, 'patientVitals')">Patient Vitals</button>
+                <button style="margin: 3px;color: cornsilk;" class="tablinks" onclick="openCity(event, 'DoctorCheckup')">OPD Check</button>
+
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div id="personalDetails" class="tabcontent">
+                <h5>Personal Details</h5>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text"
+                                       name=""
+                                       id=""
+                                       class="form-control"
+                                       placeholder=""
+                                       aria-describedby="helpId" />
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="text"
+                                       name=""
+                                       id=""
+                                       class="form-control"
+                                       placeholder=""
+                                       aria-describedby="helpId" />
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-3">
+                            <label>Gender:</label>
+
+                            <div class="form-check-inline">
+                                <input type="radio"
+                                       class="form-check-input ml-2"
+                                       name="gender"
+                                       value="Male"
+                                       required /><label class="form-check-label">Male</label>
+                                <input type="radio"
+                                       class="form-check-input ml-2"
+                                       name="gender"
+                                       value="Female"
+                                       required /><label class="form-check-label">Female</label>
+                                <input type="radio"
+                                       class="form-check-input ml-2"
+                                       name="gender"
+                                       value="Other"
+                                       required /><label class="form-check-label">Other</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea name="" class="form-control" id=""></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3">
+                        <div class="form-group ">
+                            <label>Problem</label>
+                            <textarea name="" class="form-control" id="pro"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <button class="btn btn-Primary">Save Details</button>
+                </div>
+
+                <!-- AddTable -->
+            </div>
+        </div>
+
+
+        <div class="container-fluid">
+            <div id="patientVitals" class="tabcontent">
+                <h5>Enter Details</h5>
+                <br>
+
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label for="Bd">BloodPressure:</label>
+                        <input class="form-control" style="margin: 10px; border: 5px;" placeholder="Enter BD">
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-3">
+                        <label for="Sugar">temperature:</label>
+                        <input class="form-control" style="margin: 10px ; border: 5px;" placeholder="enter temperature">
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-3">
+                        <label for="Pulse">Pulse:</label>
+                        <input class="form-control" style="margin: 10px; border: 5px;" placeholder="Enter pulse rate">
+                    </div>
+                    <div>
+
+                        <button type="submit" class="btn" style="margin: 10px;background-color:rgb(11, 102, 124);color: white;"> SaveDetails</button>
+                        <button type="reset" class="btn" style="margin: 10px;background-color:rgb(11, 102, 124);color: white;"> Reset</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="DoctorCheckup" class="tabcontent">
+
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group ">
+
+                                <label>Doctor Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-1"></div>
+
+                        <div class="col-lg-3">
+                            <div class="form-group ">
+
+                                <label>Hospital Name</label>
+                                <input type="text" class="form-control" value="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-md-3">
+                            <div class="form-group ">
+
+                                <label>Date&Time</label>
+                                <input type="datetime-local" class="form-control">
+                            </div>
+                        </div>
+
+
+                </form>
+            </div> <!--row end-->
+            <!-- <form method="GET"> -->
+            <form method="POST">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group ">
+
+                            <label>symptoms</label>
+                            <input type="text" class="form-control" id="tokenfield">
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+
+                    <div class="col-lg-3">
+                        <div class="form-group ">
+
+                            <label>Diagnosis</label>
+                            <input type="text" class="form-control" id="tokenfield2" value="" />
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-md-3">
+                        <div class="form-group ">
+
+                            <label>Remarks</label>
+                            <textarea name="" class="form-control" id=""></textarea>
+                        </div>
+
+            </form>
+        </div>
+
+
+        </form>
+    </div> <!--row end-->
+    <!-- </form> -->
+    <form method="POST">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group ">
+
+                    <label>Refered To</label>
+                    <input name="" class="form-control" id=""></input>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group ">
+
+                    <label>Refered Remarks</label>
+                    <textarea name="" class="form-control" id=""></textarea>
+                </div>
+            </div>
+
+    </form>
+</div>
+<div class="jumbotron">
+    <div class="container">
+        <div>
+            <h4>Enter Medicines List</h4>
+            <br>
+            <form id="myform">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Medicine name</label>
+                            <input type="text" name="firstName" id="firstName" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Dosage</label>
+                            <input type="text" name="lastName" id="lastName" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>timings</label>
+                            <input type="text" name="fatherName" id="fatherName" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                        <button type="submit" id="btnSubmit" class="btn " style="background-color:rgb(11, 102, 124);margin-top:30px;color:white">
+                            Submit
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+
+
+
+            <div class="table-responsive">
+                <table class="table table table-hover table-bordered" id="tblData">
+                    <tr style="background-color:  rgb(14, 28, 54);color:aliceblue">
+                        <td>Medicine</td>
+                        <td>Dosage</td>
+                        <td>Timings</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+</div>
+<div class="text-center">
+    <button type="submit" id="btnSubmit" class="btn " style="margin-top:30px;background-color: rgb(11, 102, 124);color:azure ">
+        Submit
+    </button>
+    <button type="reset" class="btn " style="background-color:rgb(11, 102, 124);margin-top:30px;color:white">
+        reset
+    </button>
+</div>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Patient Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="../css/simple-sidebar.css" rel="stylesheet" />
+
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar -->
+      <div class="bg-custom text-white border-right  " id="sidebar-wrapper">
+        <div class="sidebar-heading">
+          <i class="fa fa-user-md" aria-hidden="true"></i>&nbsp;E-Care
+        </div>
+        <div class="list-group list-group-flush  ">
+          <a
+            href="./HospitalDashboard.html"
+            class="list-group-item list-group-item-action bg-transparent"
+            ><i class="fa fa-dashboard"></i> Dashboard</a
+          >
+          <!-- <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent"
+          >
+            <i class="fa fa-tasks" aria-hidden="true"></i></a
+          > -->
+          <a
+            href="./hospitalSpecialization.html"
+            class="list-group-item list-group-item-action bg-transparent"
+            ><i class="fa fa-history" aria-hidden="true"></i>Add
+            Specialization</a
+          >
+          <a
+            href="ADDDoctors.html"
+            class="list-group-item list-group-item-action bg-transparent"
+            ><i class="fa fa-user-md" aria-hidden="true"></i> Add Doctor</a
+          >
+          <a
+          href="../HospitalPanel/settings.html"
+            class="list-group-item list-group-item-action bg-transparent"
+            ><i class="fa fa-cogs" aria-hidden="true"></i> Settings
+          </a>
+          <!-- <a
+          href="#"
+          class="list-group-item list-group-item-action bg-transparent"
+          ><i class="fa fa-user-md" aria-hidden="true"></i> </a
+        > -->
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-light bg-custom border-bottom"
+        >
+          <button class="btn btn-light btn-sm" id="menu-toggle">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Welcome HS Ludhiana!</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-right"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <a class="dropdown-item" href="Hospitalprofile.html"
+                    ><i class="fa fa-cog" aria-hidden="true"></i> My Profile</a
+                  >
+                  <a class="dropdown-item" href="index.html"
+                    ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="container-fluid">
+         
+            <div class="row">
+                <div class="col-md-10 maincontent">
+                    <div class="panel panel-default contentinside">
+                        <div class="panel-heading">Manage Doctor</div>
+                        <!----------------   Panel body Start   --------------->
+                        <div class="panel-body">
+                                <ul class="nav nav-tabs nav-fill doctor">
+                                        <li role="presentation"><a href="#doctorlist" class="nav-item nav-link active" data-toggle="tab" >Doctor List</a></li>
+                                        <li role="presentation"><a href="#adddoctor" class="nav-item nav-link active" data-toggle="tab" >Add Doctor</a></li>
+                                </ul>
+        
+            <!----------------   Display Doctor Data List Start  --------------->
+            
+                <div id="doctorlist" class="switchgroup tab-pane tab-content">
+                <table class="table table-bordered table-hover">
+                        <tr class="active">
+                                <td>Doctor ID</td>
+                                <td>Doctor Name</td>
+                                <td>Department</td>
+                                <td>Phone No.</td>
+                                <td>Options</td>
+                        </tr>
+                        
+                            <tr>
+                                    <td>111</td>
+                                    <td>Dharmesh</td>
+                                    <td>Neurology</td>
+                                    <td>123456789</td>
+                                    <td>
+                                    <a href="#"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></button></a>
+                                    <a  href="#" class="btn btn-danger" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                    </td>
+                            </tr>
+                            </c:forEach>
+                </table>
+                </div>
+            <!----------------   Display Doctor Data List Ends  --------------->
+           
+            <!------ Doctor Edit Info Modal Start Here ---------->
+                                    
+                   
+                      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                               
+                            
+                                <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Edit Doctor Information</h4>
+                                </div>
+                                
+                                <div class="modal-body">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                     <form class="form-horizontal" action="editDoct.jsp" method="post">
+                                        <div class="form-group">
+                                        <label  class="col-sm-2 control-label">Doctor Id:</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control" name="doctid" placeholder="Doctor ID" value="" readonly="readonly">
+                                        </div>
+                                        </div>
+        
+                                        <div class="form-group">
+                                        <label  class="col-sm-2 control-label">Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="doctname" placeholder="Name" >
+                                        </div>
+                                        </div>
+        
+                                        <div class="form-group">
+                                              <label class="col-sm-2 control-label">Email</label>
+                                              <div class="col-sm-10">
+                                                  <input type="email" class="form-control" name="email" placeholder="Email" >
+                                              </div>
+                                        </div>
+        
+                            <div class="form-group">
+                                  <label class="col-sm-2 control-label">Password</label>
+                                  <div class="col-sm-10">
+                                    <input type="password" class="form-control" name="pwd" placeholder="Password" >
+                                  </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Address</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="add" placeholder="Address" >
+                                </div>
+                            </div>
+        
+                             <div class="form-group">
+                                <label  class="col-sm-2 control-label">Phone</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="phon" placeholder="Phone No." >
+                                </div>
+                            </div>
+                      
+                     
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Department</label>
+                                <div class="col-sm-10">
+        
+                                <select class="form-control" name="dept">
+                                <option selected="selected">Depatrtment</option>
+                                
+                                <option> Neurology</option>
+                           
+                                      
+                                </select>
+                                </div>
+                            </div>                                                        
+                                         <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <input type="submit" class="btn btn-primary" value="Update"></button>
+                                         </div>
+                                    </form>
+                                     </div>
+                                 </div>
+                                 </div>
+                            </div>
+                         </div>
+                       </div>
+        <!----------------   Modal ends here  --------------->
+        
+        
+            <!----------------   Add Doctor Start   --------------->
+            <div id="adddoctor" class="switchgroup  tab-content">
+                <div class=" tab-pane panel panel-default">
+                    <div class="panel-body">
+                        <form class="form-horizontal" action="#" method="post">
+                            <div class="form-group">
+                            <label  class="col-sm-2 control-label">Doctor Id:</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="doctid" placeholder="Doctor ID" required="required">
+                            </div>
+                            </div>
+        
+                            <div class="form-group">
+                            <label  class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="doctname" placeholder="Name" required="required">
+                            </div>
+                            </div>
+        
+                            <div class="form-group">
+                                  <label class="col-sm-2 control-label">Email</label>
+                                  <div class="col-sm-10">
+                                      <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+                                  </div>
+                            </div>
+        
+                            <div class="form-group">
+                                  <label class="col-sm-2 control-label">Password</label>
+                                  <div class="col-sm-10">
+                                    <input type="password" class="form-control" name="pwd" placeholder="Password" required="required">
+                                  </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Address</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="add" placeholder="Address" required="required">
+                                </div>
+                            </div>
+        
+                             <div class="form-group">
+                                <label  class="col-sm-2 control-label">Phone</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="phon" placeholder="Phone No." required="required">
+                                </div>
+                            </div>
+                         
+                     
+                            <div class="form-group">
+                                <label  class="col-sm-2 control-label">Department</label>
+                                <div class="col-sm-10">
+        
+                                <select class="form-control" name="dept">
+                                <option selected="selected">Select Department</option>
+                                
+                                  <option>   
+                                    Neurology</option>
+                                                                   
+                                </select>
+                                </div>
+                            </div>
+        
+        
+                            <div class="form-group">
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Add Doctor</button>
+                                  </div>
+                            </div>
+                        </form>
+        
+                       </div>
+                </div>
+            </div>
+                                   <!----------------   Add Doctor Ends   --------------->
+                        </div>
+                   <!----------------   Panel body Ends   --------------->
+                 </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+  </body>
+</html>

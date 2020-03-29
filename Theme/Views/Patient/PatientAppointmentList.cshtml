@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "PatientAppointmentList";
+    Layout = "~/Views/Shared/PatientLayout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <h3 class="mt-4">
+                Appointment
+            </h3>
+        </div>
+        <!-- <div class="col-lg-8 mt-4 mr-auto">
+          <button class="btn btn-sm btn-custom ">
+            <i class="fa fa-plus-square" aria-hidden="true"></i> New
+            Appointment
+          </button>
+        </div> -->
+    </div>
+
+    <div class="col-lg-6 " style="margin-left: 20%;">
+        <div class="card">
+            <div class="card-header bg-custom text-center">
+                <p class="lead text-white">New Appointment</p>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text"
+                                   name=""
+                                   id=""
+                                   class="form-control"
+                                   placeholder=""
+                                   aria-describedby="helpId" />
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text"
+                                   name=""
+                                   id=""
+                                   class="form-control"
+                                   placeholder=""
+                                   aria-describedby="helpId" />
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea name="" class="form-control" id=""></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Gender</label>
+                        </div>
+                        <div class="form-check-inline" style="margin-top: -20px;">
+                            <input type="radio"
+                                   class="form-check-input ml-2"
+                                   name="gender"
+                                   value="Male"
+                                   required /><label class="form-check-label">Male</label>
+                            <input type="radio"
+                                   class="form-check-input ml-2"
+                                   name="gender"
+                                   value="Female"
+                                   required /><label class="form-check-label">Female</label>
+                            <input type="radio"
+                                   class="form-check-input ml-2"
+                                   name="gender"
+                                   value="Other"
+                                   required /><label class="form-check-label">Other</label>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label>Age</label>
+                            <input type="text"
+                                   name=""
+                                   id=""
+                                   class="form-control"
+                                   placeholder="Enter your age"
+                                   aria-describedby="helpId" />
+                        </div>
+                        <div class="form-group ">
+                            <label>Problem</label>
+                            <textarea name="" class="form-control" id=""></textarea>
+
+
+                        </div>
+                    </div>
+                </div>
+                @*<div class="form-group">
+            <button class="btn btn-custom">Make Appointment</button>
+        </div>*@
+
+                <div class="form-group mt-2" style="margin-left: 40%;">
+                    <button type="submit" class="btn btn-primary">
+                       Make Appointment
+                    </button>
+                    <button type="reset" class="btn btn-danger ">
+                        Cancel
+                    </button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div><br>
+    <h3>My Appointment List</h3>
+    <div class="col-lg-6 table-responsive" style="margin-left: 20%;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Hospital</th>
+                    <th>Date</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>HS 1</td>
+                    <td>2020-03-01</td>
+                    <td>
+                        <i class="fa fa-eye"
+                           aria-hidden="true"
+                           style="color:rgb(20, 149, 182)"></i>
+                        &nbsp;
+                        <i class="fa fa-trash-o"
+                           aria-hidden="true"
+                           style="color:red"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>HS 2</td>
+                    <td>2020-03-01</td>
+                    <td>
+                        <i class="fa fa-eye"
+                           aria-hidden="true"
+                           style="color:rgb(20, 149, 182)"></i>
+                        &nbsp;
+                        <i class="fa fa-trash-o"
+                           aria-hidden="true"
+                           style="color:red"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

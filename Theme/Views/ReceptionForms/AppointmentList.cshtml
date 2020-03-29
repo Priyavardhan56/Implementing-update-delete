@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "AppointmentList";
+    Layout = "~/Views/Shared/AppointmentLayout.cshtml";
+}
+
+<center><h3>AppointmentList</h3> </center><br />
+<div class="container-fluid">
+    <div class="row mt-1">
+        <div class="col-lg-11">
+            <form>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table border">
+                                <thead class="bg-primary text-white">
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>AppointmentType</th>
+                                        <th>Phone</th>
+                                        <th>Address</th>
+                                        <th>Problem</th>
+                                        <th>Payment</th>
+                                        <th>Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < ViewBag.Data.Count; i++)
+                                    {
+                                        <tr>
+                                            @for (int j = 0; j < ViewBag.Data[0].Count; j++)
+                                            {
+                                                <td>@ViewBag.Data[i][j]</td>
+                                            }
+                                        </tr>
+                                    }
+                                    @*<tr>
+                                            <td>Harsha</td>
+                                            <td>jalamndhar</td>
+                                            <td>68898798</td>
+                                            <td>Headache</td>
+                                            <td>100</td>
+                                            <td>9:30</td>
+
+                                        </tr>*@
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+

@@ -1,0 +1,181 @@
+﻿@model Theme.Models.Hospital
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+      if (Session["Email"] != null)
+    {
+        ViewBag.id = @Session["Id"].ToString();
+        ViewBag.EntryBy = @Session["Name"].ToString();
+    }
+
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $("#EntryDateTime").hide();
+        $("#EntryBy").hide();
+          $("#HospitalId").hide();
+        $("#eb").hide();
+        $("#hi").hide();
+
+
+    });
+</script>
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Hospital</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+                @Html.LabelFor(model => model.HospitalName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HospitalName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HospitalName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                @Html.LabelFor(model => model.HospitalAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HospitalAddress, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HospitalAddress, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                @Html.LabelFor(model => model.HospitalCity, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HospitalCity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HospitalCity, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+                @Html.LabelFor(model => model.HospitalState, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HospitalState, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HospitalState, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                @Html.LabelFor(model => model.HospitalCountry, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HospitalCountry, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HospitalCountry, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                @Html.LabelFor(model => model.HospitalPhone, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HospitalPhone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HospitalPhone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+                @Html.LabelFor(model => model.HospitalEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HospitalEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HospitalEmail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                @Html.LabelFor(model => model.HospitalLogo, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.HospitalLogo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.HospitalLogo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })*@
+              
+                    <div class="form-input">
+                        <label class="display-block">IsActive</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="IsActive" id="product_active" value="1" checked>
+                            <label class="form-check-label" for="product_active">
+                                Active
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="IsActive" id="product_inactive" value="0">
+                            <label class="form-check-label" for="product_inactive">
+                                Inactive
+                            </label>
+                        </div>
+                    </div>
+              
+            </div>
+        </div>
+    </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.EntryBy, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.EntryBy, "", new { @class = "text-danger" })*@
+             
+
+                    @*@Html.EditorFor(model => model.EntryBy, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EntryBy, "", new { @class = "text-danger" })*@
+                    <div class="form-input">
+                        <label id="eb">Entry By</label>
+                        @*<div class="form-control">
+                    @{
+                        if (Session["Email"] != null)
+                        {
+                            @Session["Name"].ToString()
+                        }
+
+                    }
+                </div>*@
+                        @Html.TextBox("EntryBy", (string)ViewBag.EntryBy, new { @class = "form-control" })
+                    </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "HospitalList", "HospitalMaster")
+</div>
